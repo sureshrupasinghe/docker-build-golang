@@ -27,9 +27,20 @@ build:
             fi        
     - internal/docker-kill:
         name: myTestContainer               
-    - internal/docker-push: 
-        image-name: my-new-image
-        username: $USERNAME # Docker Hub username. When using CLI, set using "export X_USERNAME=<username>"  
-        password: $PASSWORD # Docker Hub password. When using CLI, set using "export X_PASSWORD=<password>" 
-        repository: docker.io/$USERNAME/docker-build-golang
-        tag: latest
+    
+      deploy:
+
+      steps:
+
+      - internal/docker-push:
+
+      username: $USERNAME
+
+      password: $PASSWORD
+
+      tag: my-amazing-tag
+
+      repository: turing/bar
+
+      registry: registry.cloud.tenable.com
+
