@@ -27,20 +27,12 @@ build:
             fi        
     - internal/docker-kill:
         name: myTestContainer               
-    
-      deploy:
+        
+    - internal/docker-push:
 
-      steps:
-
-      - internal/docker-push:
-
-      username: $USERNAME
-
-      password: $PASSWORD
-
-      tag: my-amazing-tag
-
-      repository: turing/bar
-
-      registry: registry.cloud.tenable.com
+        username: $USERNAME
+        password: $PASSWORD
+        tag: my-amazing-tag
+        repository: turing/bar
+        registry: registry.cloud.tenable.com
 
